@@ -9,16 +9,14 @@ namespace RobotsVsDinosaurs
     class Fleet
     {
         //Member Variables(HAS)
-        public List<string> roboticFleet;
-        public Robot robots;
+        public List<Fleet> roboticFleet;        
         
 
 
         //Constructor(SPAWNER)
         public Fleet()
         {
-            roboticFleet = new List<string>();
-            
+            roboticFleet = new List<Fleet>();            
         }
 
         //Member Methods(CAN DO)

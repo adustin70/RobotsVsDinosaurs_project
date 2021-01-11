@@ -9,14 +9,14 @@ namespace RobotsVsDinosaurs
     class Herd
     {
         //Member Variables(HAS)
-        public List<string> dinosaurHerd;
-        
+        List<Herd> dinosaurHerd;
         
 
-        //Constructor(SPAWNER)
+
+        ////Constructor(SPAWNER)
         public Herd()
         {
-            dinosaurHerd = new List<string>();            
+            dinosaurHerd = new List<Herd>();
         }
 
 

@@ -38,6 +38,8 @@ namespace RobotsVsDinosaurs
             return robotName.robotHealth;
         }
 
+        
+
 
 
         //Give dinos a type, health, energy, and attack power
