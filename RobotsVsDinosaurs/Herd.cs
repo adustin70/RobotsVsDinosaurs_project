@@ -17,9 +17,9 @@ namespace RobotsVsDinosaurs
         ////Constructor(SPAWNER)
         public Herd()
         {
-            Dinosaur dinosaur1 = new Dinosaur("Dogzilla", 100, 100, 20);
-            Dinosaur dinosaur2 = new Dinosaur("MegaCat", 100, 100, 15);
-            Dinosaur dinosaur3 = new Dinosaur("SinisterSnips", 100, 100, 40);
+            Dinosaur dinosaur1 = new Dinosaur("Dogzilla", 100, 100, 25);
+            Dinosaur dinosaur2 = new Dinosaur("MegaCat", 100, 100, 25);
+            Dinosaur dinosaur3 = new Dinosaur("SinisterSnips", 100, 100, 25);
             dinosaurHerd = new List<Dinosaur>();
             dinosaurHerd.Add(dinosaur1);
             dinosaurHerd.Add(dinosaur2);

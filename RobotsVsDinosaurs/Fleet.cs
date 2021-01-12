@@ -14,8 +14,8 @@ namespace RobotsVsDinosaurs
         //Constructor(SPAWNER)
         public Fleet()
         {
-            Robot robot1 = new Robot("Zappatron", 100, 100, 30);
-            Robot robot2 = new Robot("TheOhmster", 100, 100, 25);
+            Robot robot1 = new Robot("Zappatron", 100, 100, 50);
+            Robot robot2 = new Robot("TheOhmster", 100, 100, 50);
             Robot robot3 = new Robot("Gigawhat", 100, 100, 50);
             roboticFleet = new List<Robot>();
             roboticFleet.Add(robot1);
