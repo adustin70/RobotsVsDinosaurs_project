@@ -9,13 +9,21 @@ namespace RobotsVsDinosaurs
     class Battlefield
     {
         //Member Variables(HAS)
-
+        public Fleet fleet;
+        public Herd herd;
 
         //Constructor(SPAWNER)
-
+        public Battlefield()
+        {
+            fleet = new Fleet();
+            herd = new Herd();
+        }
 
         //Member Methods(CAN DO)
-        
+        public void StartBattle()
+        {
+            
+        }
 
 
 

@@ -11,7 +11,7 @@ namespace RobotsVsDinosaurs
         //Member Variables(HAS)
         string type;
         int attackPowerMultiplier;
-        //public List<string> weapons;
+        public List<string> weapons;
 
 
         //Constructor(SPAWNER)
@@ -20,7 +20,7 @@ namespace RobotsVsDinosaurs
             //give type and APM values through constructor
             this.type = type;
             this.attackPowerMultiplier = attackPowerMultiplier;
-            //weapons = new List<string>();
+            weapons = new List<string>();
             
         }
 
