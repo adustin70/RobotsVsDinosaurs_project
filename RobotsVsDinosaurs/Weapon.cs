@@ -9,20 +9,22 @@ namespace RobotsVsDinosaurs
     class Weapon
     {
         //Member Variables(HAS)
-        string type;
+        //Add after getting base program running!!!
+
+        /*string type;
         int attackPowerMultiplier;
-        public List<string> weapons;
+        public List<string> weapons;*/
 
 
         //Constructor(SPAWNER)
-        public Weapon(string type, int attackPowerMultiplier)
+        /*public Weapon(string type, int attackPowerMultiplier)
         {
             //give type and APM values through constructor
             this.type = type;
             this.attackPowerMultiplier = attackPowerMultiplier;
             weapons = new List<string>();
             
-        }
+        }*/
 
 
 

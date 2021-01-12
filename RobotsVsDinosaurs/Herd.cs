@@ -18,7 +18,7 @@ namespace RobotsVsDinosaurs
 
 
         ////Constructor(SPAWNER)
-        public Herd(Dinosaur dinosaur)
+        public Herd()
         {
             dinosaurHerd = new List<Dinosaur>();
             dinosaurHerd.Add(dinosaur1);
