@@ -30,6 +30,7 @@ namespace RobotsVsDinosaurs
 
                 if (fleet.roboticFleet[0].robotHealth == 0 || herd.dinosaurHerd[0].dinoHealth == 0)
                 {
+                    Console.WriteLine($"{fleet.roboticFleet[0].robotName} Wins!\n");
                     break;
                 }
                     herd.dinosaurHerd[0].Attack(fleet.roboticFleet[0]);
@@ -46,6 +47,7 @@ namespace RobotsVsDinosaurs
 
                 if (fleet.roboticFleet[1].robotHealth == 0 || herd.dinosaurHerd[1].dinoHealth == 0)
                 {
+                    Console.WriteLine($"{fleet.roboticFleet[1].robotName} Wins!\n");
                     break;
                 }
 
@@ -63,6 +65,7 @@ namespace RobotsVsDinosaurs
 
                 if (fleet.roboticFleet[2].robotHealth == 0 || herd.dinosaurHerd[2].dinoHealth == 0)
                 {
+                    Console.WriteLine($"{fleet.roboticFleet[2].robotName} Wins!\n");
                     break;
                 }
 
