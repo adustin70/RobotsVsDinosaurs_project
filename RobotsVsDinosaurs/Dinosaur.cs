@@ -13,10 +13,8 @@ namespace RobotsVsDinosaurs
         public int dinoHealth;
         public int dinoEnergy;
         public int dinoAttackPower;
-        public string dinoAttackType;
-
-
-
+        //Add after base program is working
+        /*public string dinoAttackType;*/
 
 
 
@@ -32,10 +30,10 @@ namespace RobotsVsDinosaurs
 
 
         //Member Methods(CAN DO)
-        public int DinosaurAttack(Robot robotName)
+        public int Attack(Robot robot)
         {
-            robotName.robotHealth = robotName.robotHealth - dinoAttackPower;
-            return robotName.robotHealth;
+            robot.robotHealth = robot.robotHealth - dinoAttackPower;
+            return robot.robotHealth;
         }
 
         

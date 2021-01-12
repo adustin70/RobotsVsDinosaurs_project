@@ -13,7 +13,7 @@ namespace RobotsVsDinosaurs
         public int robotHealth;
         public int robotPowerLevel;
         public int robotAttackPower;
-        public Weapon weapon;
+        //public Weapon weapon;
 
 
 
@@ -29,10 +29,10 @@ namespace RobotsVsDinosaurs
 
         //Member Methods(CAN DO)
         //make a method.  "When it's called, it will do this"
-        public int RobotAttack(Dinosaur dinoType)
+        public int Attack(Dinosaur dino)
         {
-            dinoType.dinoHealth = dinoType.dinoHealth - robotAttackPower;
-            return dinoType.dinoHealth;
+            dino.dinoHealth = dino.dinoHealth - robotAttackPower;
+            return dino.dinoHealth;
         }
 
         

@@ -9,10 +9,7 @@ namespace RobotsVsDinosaurs
     class Herd
     {
         //Member Variables(HAS)
-        List<Dinosaur> dinosaurHerd;
-        public Dinosaur dinosaur1 = new Dinosaur("Dogzilla", 100, 100, 10);
-        public Dinosaur dinosaur2 = new Dinosaur("MegaCat", 100, 100, 10);
-        public Dinosaur dinosaur3 = new Dinosaur("SinisterSnips", 100, 100, 10);
+        public List<Dinosaur> dinosaurHerd;
         
         
 
@@ -20,6 +17,9 @@ namespace RobotsVsDinosaurs
         ////Constructor(SPAWNER)
         public Herd()
         {
+            Dinosaur dinosaur1 = new Dinosaur("Dogzilla", 100, 100, 20);
+            Dinosaur dinosaur2 = new Dinosaur("MegaCat", 100, 100, 15);
+            Dinosaur dinosaur3 = new Dinosaur("SinisterSnips", 100, 100, 40);
             dinosaurHerd = new List<Dinosaur>();
             dinosaurHerd.Add(dinosaur1);
             dinosaurHerd.Add(dinosaur2);
