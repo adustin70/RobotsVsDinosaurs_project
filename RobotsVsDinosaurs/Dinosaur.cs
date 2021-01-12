@@ -13,7 +13,6 @@ namespace RobotsVsDinosaurs
         public int dinoHealth;
         public int dinoEnergy;
         public int dinoAttackPower;
-        //Add after base program is working
         /*public string dinoAttackType;*/
 
 
@@ -33,6 +32,7 @@ namespace RobotsVsDinosaurs
         public int Attack(Robot robot)
         {
             robot.robotHealth = robot.robotHealth - dinoAttackPower;
+            dinoEnergy = dinoEnergy - 10;
             return robot.robotHealth;
         }
 

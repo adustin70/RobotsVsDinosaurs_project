@@ -32,6 +32,7 @@ namespace RobotsVsDinosaurs
         public int Attack(Dinosaur dino)
         {
             dino.dinoHealth = dino.dinoHealth - robotAttackPower;
+            robotPowerLevel = robotPowerLevel - 10;
             return dino.dinoHealth;
         }
 
