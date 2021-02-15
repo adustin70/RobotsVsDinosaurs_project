@@ -6,34 +6,34 @@ using System.Threading.Tasks;
 
 namespace RobotsVsDinosaurs
 {
-    class Dinosaur
+    class Dinosaur : Fighter
     {
         //Member Variables(HAS)
-        public string dinoType;        
-        public int dinoHealth;
         public int dinoEnergy;
         public int dinoAttackPower;
-        /*public string dinoAttackType;*/
-
 
 
         //Constructor(SPAWNER)
 
-        public Dinosaur(string dinoType, int dinoHealth, int dinoEnergy, int dinoAttackPower)
+        public Dinosaur(string dinoType, int dinoAttackPower)
         {
-            this.dinoType = dinoType;
-            this.dinoHealth = dinoHealth;
-            this.dinoEnergy = dinoEnergy;
+            this.name = dinoType;
+            health = 100;
+            dinoEnergy = 100;
             this.dinoAttackPower = dinoAttackPower;            
         }
 
 
         //Member Methods(CAN DO)
-        public int Attack(Robot robot)
+        public override void Attack(Fighter robot)
         {
-            robot.robotHealth = robot.robotHealth - dinoAttackPower;
+            robot.health = robot.health - dinoAttackPower;
             dinoEnergy = dinoEnergy - 10;
-            return robot.robotHealth;
+            if (robot.health < 0)
+            {
+                robot.health = 0;
+            }
+            Console.WriteLine($"{name} attacked {robot.name} for {dinoAttackPower} damage. Robot's health is now {robot.health}\n");
         }
 
         

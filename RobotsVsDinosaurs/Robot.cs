@@ -6,34 +6,34 @@ using System.Threading.Tasks;
 
 namespace RobotsVsDinosaurs
 {
-    class Robot
+    class Robot : Fighter
     {
         //Member Variables(HAS)
-        public string robotName;     
-        public int robotHealth;
         public int robotPowerLevel;
-        public int robotAttackPower;
-        //public Weapon weapon;
+        public Weapon weapon;
 
 
 
         //Constructor(SPAWNER)
-        public Robot(string robotName, int robotHealth, int robotPowerLevel, int robotAttackPower)
-        {
-            this.robotName = robotName;
-            this.robotHealth = robotHealth;
-            this.robotPowerLevel = robotPowerLevel;
-            this.robotAttackPower = robotAttackPower;
+        public Robot(string robotName, int robotAttackPower, string weaponType)
+        { 
+            name = robotName;
+            health = 100;
+            this.weapon = new Weapon(weaponType, robotAttackPower);
         }
 
 
         //Member Methods(CAN DO)
         //make a method.  "When it's called, it will do this"
-        public int Attack(Dinosaur dino)
-        {
-            dino.dinoHealth = dino.dinoHealth - robotAttackPower;
+        public override void Attack(Fighter dino)
+        {   
+            dino.health = dino.health - weapon.attackPower;
             robotPowerLevel = robotPowerLevel - 10;
-            return dino.dinoHealth;
+            if (dino.health < 0)
+            {
+                dino.health = 0;
+            }
+            Console.WriteLine($"{name} has attacked {dino.name} with a {weapon.type} for {weapon.attackPower} damage. Dino's health is now {dino.health}\n");
         }
 
         

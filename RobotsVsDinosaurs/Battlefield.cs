@@ -20,67 +20,72 @@ namespace RobotsVsDinosaurs
         }
 
         //Member Methods(CAN DO)
+
+        public void StartingMessage()
+        {
+            Console.WriteLine("Welcome to Robots Vs Dinosaurs!!!");
+        }
+
+        public void Rules()
+        {
+            Console.WriteLine("Choose your fighters then fight to the death!!!");
+        }
+
+        public int ChooseFighter(string verb, string fighterType, Army army)
+        {
+            Console.WriteLine($"Choose {fighterType} who will {verb}:");
+            for (int i = 0; i < army.fighters.Count; i++)
+            {
+                Console.WriteLine($"Press {i} for {army.fighters[i].name}");
+            }
+            string userInput = Console.ReadLine();
+            int chosenFighter = Int32.Parse(userInput);
+            return chosenFighter;
+        }
+
+        public void SingleAttack(int attack, int defend, Army attacker, Army defender)
+        {
+            attacker.fighters[attack].Attack(defender.fighters[defend]);
+            if (defender.fighters[defend].health <= 0)
+            {
+                Console.WriteLine(defender.fighters[defend].name + "Was killed");
+                defender.fighters.RemoveAt(defend);
+            }
+        }
+
+        public void DisplayWinner()
+        {
+            if (fleet.fighters.Count > 0)
+            {
+                Console.WriteLine("The Robots conquer all!");
+            }
+            else
+            {
+                Console.WriteLine("Dinosaurs destroyed tin men!");
+            }
+        }
+
         public void StartBattle()
         {
-            while (fleet.roboticFleet[0].robotHealth > 0 && herd.dinosaurHerd[0].dinoHealth > 0)
-            {                
-                fleet.roboticFleet[0].Attack(herd.dinosaurHerd[0]);
-                Console.WriteLine($"{fleet.roboticFleet[0].robotName} attacks {herd.dinosaurHerd[0].dinoType}");
-                Console.WriteLine($"{fleet.roboticFleet[0].robotName}'s energy is now {fleet.roboticFleet[0].robotPowerLevel}");
-                Console.WriteLine($"{herd.dinosaurHerd[0].dinoType}'s health drops to {herd.dinosaurHerd[0].dinoHealth}\n");
+            StartingMessage();
+            Rules();
 
-                if (fleet.roboticFleet[0].robotHealth == 0 || herd.dinosaurHerd[0].dinoHealth == 0)
+            while (fleet.fighters.Count > 0 && herd.fighters.Count > 0)
+            {
+                int robotAttakcer = ChooseFighter("attack", "robot", fleet);
+                int dinoDefender = ChooseFighter("defend", "dino", herd);
+                SingleAttack(robotAttakcer, dinoDefender, fleet, herd);
+
+                if (herd.fighters.Count > 0)
                 {
-                    Console.WriteLine($"{fleet.roboticFleet[0].robotName} Wins!\n");
-                    break;
+                    int dinoAttacker = ChooseFighter("attack", "dino", herd);
+                    int robotDefender = ChooseFighter("defend", "robot", fleet);
+                    SingleAttack(dinoAttacker, robotDefender, herd, fleet);
                 }
-                herd.dinosaurHerd[0].Attack(fleet.roboticFleet[0]);
-                Console.WriteLine($"{herd.dinosaurHerd[0].dinoType} attacks {fleet.roboticFleet[0].robotName}");
-                Console.WriteLine($"{herd.dinosaurHerd[0].dinoType}'s energy is now {herd.dinosaurHerd[0].dinoEnergy}");
-                Console.WriteLine($"{fleet.roboticFleet[0].robotName}'s health is now {fleet.roboticFleet[0].robotHealth}\n");                
             }
 
-
-            while (fleet.roboticFleet[1].robotHealth > 0 && herd.dinosaurHerd[1].dinoHealth > 0)
-            {                
-                fleet.roboticFleet[1].Attack(herd.dinosaurHerd[1]);
-                Console.WriteLine($"{fleet.roboticFleet[1].robotName} attacks {herd.dinosaurHerd[1].dinoType}");
-                Console.WriteLine($"{fleet.roboticFleet[1].robotName}'s energy is now {fleet.roboticFleet[1].robotPowerLevel}");
-                Console.WriteLine($"{herd.dinosaurHerd[1].dinoType}'s health is now {herd.dinosaurHerd[1].dinoHealth}\n");
-
-                if (fleet.roboticFleet[1].robotHealth == 0 || herd.dinosaurHerd[1].dinoHealth == 0)
-                {
-                    Console.WriteLine($"{fleet.roboticFleet[1].robotName} Wins!\n");
-                    break;
-                }
-
-                herd.dinosaurHerd[1].Attack(fleet.roboticFleet[1]);
-                Console.WriteLine($"{herd.dinosaurHerd[1].dinoType} attacks {fleet.roboticFleet[1].robotName}");
-                Console.WriteLine($"{herd.dinosaurHerd[1].dinoType}'s energy is now {herd.dinosaurHerd[1].dinoEnergy}");
-                Console.WriteLine($"{fleet.roboticFleet[1].robotName}'s health drops to {fleet.roboticFleet[1].robotHealth}\n");                
-            }
-
-
-            while (fleet.roboticFleet[2].robotHealth > 0 && herd.dinosaurHerd[2].dinoHealth > 0)
-            {                
-                fleet.roboticFleet[2].Attack(herd.dinosaurHerd[2]);
-                Console.WriteLine($"{fleet.roboticFleet[2].robotName} attacks {herd.dinosaurHerd[2].dinoType}");
-                Console.WriteLine($"{fleet.roboticFleet[2].robotName}'s energy is now {fleet.roboticFleet[2].robotPowerLevel}");
-                Console.WriteLine($"{herd.dinosaurHerd[2].dinoType}' health drops to {herd.dinosaurHerd[2].dinoHealth}\n");
-
-                if (fleet.roboticFleet[2].robotHealth == 0 || herd.dinosaurHerd[2].dinoHealth == 0)
-                {
-                    Console.WriteLine($"{fleet.roboticFleet[2].robotName} Wins!\n");
-                    break;
-                }
-
-                herd.dinosaurHerd[2].Attack(fleet.roboticFleet[2]);
-                Console.WriteLine($"{herd.dinosaurHerd[2].dinoType} attacks {fleet.roboticFleet[2].robotName}");
-                Console.WriteLine($"{herd.dinosaurHerd[2].dinoType}' energy is now {herd.dinosaurHerd[2].dinoEnergy}");
-                Console.WriteLine($"{fleet.roboticFleet[2].robotName}'s health drops to {fleet.roboticFleet[2].robotHealth}\n");                
-            }
-
-            Console.WriteLine($"The winners are {fleet.roboticFleet[0].robotName}, {fleet.roboticFleet[1].robotName} and {fleet.roboticFleet[2].robotName}");
+            DisplayWinner();
+            Console.ReadLine();
         }
 
 

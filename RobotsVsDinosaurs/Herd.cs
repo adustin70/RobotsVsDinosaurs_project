@@ -6,24 +6,21 @@ using System.Threading.Tasks;
 
 namespace RobotsVsDinosaurs
 {
-    class Herd
+    class Herd : Army
     {
         //Member Variables(HAS)
-        public List<Dinosaur> dinosaurHerd;
-        
-        
 
 
         ////Constructor(SPAWNER)
         public Herd()
         {
-            Dinosaur dinosaur1 = new Dinosaur("Dogzilla", 100, 100, 10);
-            Dinosaur dinosaur2 = new Dinosaur("MegaCat", 100, 100, 10);
-            Dinosaur dinosaur3 = new Dinosaur("SinisterSnips", 100, 100, 10);
-            dinosaurHerd = new List<Dinosaur>();
-            dinosaurHerd.Add(dinosaur1);
-            dinosaurHerd.Add(dinosaur2);
-            dinosaurHerd.Add(dinosaur3);
+            fighters = new List<Fighter>();
+            Dinosaur dinosaur1 = new Dinosaur("Dogzilla", 50);
+            Dinosaur dinosaur2 = new Dinosaur("MegaCat", 20);
+            Dinosaur dinosaur3 = new Dinosaur("SinisterSnips", 15);
+            fighters.Add(dinosaur1);
+            fighters.Add(dinosaur2);
+            fighters.Add(dinosaur3);
         }
 
 

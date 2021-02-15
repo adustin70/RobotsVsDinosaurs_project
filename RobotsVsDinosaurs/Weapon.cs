@@ -9,31 +9,25 @@ namespace RobotsVsDinosaurs
     class Weapon
     {
         //Member Variables(HAS)
-        //Add after getting base program running!!!
+        //member variables (HAS A)
+        public string type;
+        public int attackPower;
 
-        /*string type;
-        int attackPowerMultiplier;
-        public List<string> weapons;*/
-
-
-        //Constructor(SPAWNER)
-        /*public Weapon(string type, int attackPowerMultiplier)
+        //constructor
+        public Weapon(string type, int attackPower)
         {
-            //give type and APM values through constructor
             this.type = type;
-            this.attackPowerMultiplier = attackPowerMultiplier;
-            weapons = new List<string>();
-            
-        }*/
+            this.attackPower = attackPower;
+        }
 
 
 
         //Member Methods(CAN DO)
+
+
+
+
+
         
-
-
-
-
-        //"excaliburr", "ronaldRayGun", "mrExplodinator", "miniManyGuns", "jaxAxe", "srFistyCuffs"
     }
 }
